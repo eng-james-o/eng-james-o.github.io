@@ -56,3 +56,17 @@ ul {
 ul li {
     margin-bottom: 1em;
 }
+
+.container {
+    display: flex;  /* Enables the flexbox layout */
+    justify-content: space-between;  /* Ensures items are spaced to the sides */
+    align-items: center;  /* Aligns items vertically in the center */
+}
+.picture {
+    width: 150px;  /* Adjust the size of the image as needed */
+    height: auto;
+}
+.heading {
+    font-size: 24px;
+    margin: 0;  /* Removes default margins for the heading */
+}
