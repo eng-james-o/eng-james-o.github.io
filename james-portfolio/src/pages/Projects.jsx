@@ -7,7 +7,7 @@ const Projects = () => (
     <section>
       <h2>Software Projects</h2>
       <ul>
-        <li><strong>AirFM:</strong> An AI-powered aerial operations management software for drone teams.</li>
+        <li><strong>AirFM:</strong> A tool to aid drone designers in selecting and manipulating airfoils for their drone build and exporting it to CAD softwares for more detailed designs. </li>
       </ul>
     </section>
 

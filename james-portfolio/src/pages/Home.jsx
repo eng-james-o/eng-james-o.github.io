@@ -1,10 +1,12 @@
 import React from 'react';
+import AnimatedText from '../components/AnimatedText';
+import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from 'react-icons/ai';
 
 const Home = () => (
   <div className="home-container">
     <section className="hero">
-      <h1>Hi, I’m James</h1>
-      <p>Data Scientist • Drone Engineer • STEM Advocate</p>
+      <AnimatedText />
+      <p>Machine Learning Engineer • Drone Engineer • STEM Advocate</p>
     </section>
 
     <section className="bio">
@@ -20,9 +22,21 @@ const Home = () => (
     <section className="socials">
       <h2>Connect</h2>
       <ul>
-        <li><a href="https://github.com/eng-james-o">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/eng-james-o">LinkedIn</a></li>
-        <li><a href="https://instagram.com/engjameso">Instagram</a></li>
+        <li>
+          <a href="https://github.com/eng-james-o" target="_blank" rel="noopener noreferrer">
+            <AiFillGithub size={24} /> GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/eng-james-o" target="_blank" rel="noopener noreferrer">
+            <AiFillLinkedin size={24} /> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/engjameso" target="_blank" rel="noopener noreferrer">
+            <AiFillInstagram size={24} /> Instagram
+          </a>
+        </li>
       </ul>
     </section>
   </div>

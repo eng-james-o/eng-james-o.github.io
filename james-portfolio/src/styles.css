@@ -1,28 +1,28 @@
+/* Updated styles.css to align with Tailwind CSS v4 guidelines */
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'sans';
+    background-color: #edf2f7; /* secondary */
+    color: #2d3748; /* accent */
 }
 
 header {
-    background-color: #333;
+    background-color: #2d3748; /* accent */
     color: white;
-    padding: 1em 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 1em;
+    margin: 0 1rem;
 }
 
 nav ul li a {
@@ -32,43 +32,43 @@ nav ul li a {
 }
 
 section {
-    margin: 2em auto;
-    max-width: 800px;
-    padding: 0 2em;
+    margin: 2rem auto;
+    max-width: 48rem;
+    padding: 2rem;
 }
 
 h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 0.5em;
+    border-bottom: 2px solid #2d3748; /* accent */
+    padding-bottom: 0.5rem;
 }
 
 footer {
     text-align: center;
-    padding: 1em;
-    background-color: #333;
+    padding: 1rem 0;
+    background-color: #2d3748; /* accent */
     color: white;
 }
 
 ul {
-    padding-left: 1.5em;
+    padding-left: 1.5rem;
 }
 
 ul li {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 .container {
-    display: flex;  /* Enables the flexbox layout */
-    justify-content: space-between;  /* Ensures items are spaced to the sides */
-    align-items: center;  /* Aligns items vertically in the center */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .picture {
-    width: 150px;  /* Adjust the size of the image as needed */
+    width: 9rem;
     height: auto;
 }
 
 .heading {
-    font-size: 24px;
-    margin: 0;  /* Removes default margins for the heading */
+    font-size: theme('fontSize.2xl');
+    margin: 0;
 }

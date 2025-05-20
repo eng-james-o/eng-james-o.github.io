@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Career from './pages/Career';
 import OtherInterests from './pages/OtherInterests';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 
 function App() {
