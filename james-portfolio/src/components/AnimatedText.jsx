@@ -27,7 +27,7 @@ const AnimatedText = () => {
   }, [currentText, isDeleting, index, texts]);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'left', alignItems: 'center', height: '100%' }}>
+    <div style={{ display: 'flex', justifyContent: 'left', alignItems: 'left', height: '100%' }}>
       <h1>{currentText}</h1>
     </div>
   );

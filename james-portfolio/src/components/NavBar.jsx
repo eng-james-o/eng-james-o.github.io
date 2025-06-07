@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import tailwindcss from "tailwindcss/tailwind-config";
 
 const pages = [
     { name: "Home", path: "/" },
@@ -14,29 +15,29 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 h-16 bg-[--color-secondary] text-white z-50 shadow-md">
-                <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-full">
-                    <div className="font-bold text-xl text-[--color-primary]">My Portfolio</div>
-                    <div className="hidden md:flex space-x-6">
+            <nav className="navbar navbar-translucent">
+                <div className="navbar-content">
+                    <div className="navbar-logo">My Portfolio</div>
+                    <div className="navbar-links">
                         {pages.map((page) => (
                             <a
                                 key={page.path}
                                 href={page.path}
-                                className="text-[--color-accent] hover:text-[--color-primary] transition-colors"
+                                className=""
                             >
                                 {page.name}
                             </a>
                         ))}
                     </div>
                     <button
-                        className="md:hidden bg-[--color-primary] text-white p-2 rounded-lg"
+                        className="navbar-menu-btn md:hidden"
                         onClick={handleDrawerToggle}
                         aria-label="Open navigation menu"
                     >
-                        <div className="space-y-1">
-                            <span className="block w-6 h-0.5 bg-white"></span>
-                            <span className="block w-6 h-0.5 bg-white"></span>
-                            <span className="block w-6 h-0.5 bg-white"></span>
+                        <div className="navbar-menu-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                     </button>
                 </div>
@@ -44,27 +45,29 @@ const Navbar = () => {
             {drawerOpen && (
                 <>
                     <div
-                        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                        className="navbar-backdrop open"
                         onClick={handleDrawerToggle}
                     ></div>
                     <div
-                        className={`fixed top-0 right-0 h-full bg-[--color-secondary] w-64 transform transition-transform z-50 ${
-                            drawerOpen ? "translate-x-0" : "translate-x-full"
-                        }`}
+                        className={`navbar-drawer open`}
+                        style={{
+                            transform: drawerOpen ? 'translateX(0)' : 'translateX(100%)',
+                            transition: 'transform 0.7s cubic-bezier(0.4,0,0.2,1)'
+                        }}
                     >
                         <button
-                            className="absolute top-4 right-4 text-white text-2xl"
+                            className="navbar-drawer-close"
                             onClick={handleDrawerToggle}
                             aria-label="Close navigation menu"
                         >
                             &times;
                         </button>
-                        <div className="mt-16 space-y-4 px-6">
+                        <div className="navbar-drawer-links">
                             {pages.map((page) => (
                                 <a
                                     key={page.path}
                                     href={page.path}
-                                    className="block text-[--color-accent] hover:text-[--color-primary] transition-colors"
+                                    className="navbar-drawer-link"
                                     onClick={() => setDrawerOpen(false)}
                                 >
                                     {page.name}
