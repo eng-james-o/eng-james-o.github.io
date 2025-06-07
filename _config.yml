@@ -1,0 +1,11 @@
+# Site settings
+
+title: "James' Portfolio"
+description: "A personal portfolio built with Jekyll"
+baseurl: ""
+url: "https://eng-james-o.github.io"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
