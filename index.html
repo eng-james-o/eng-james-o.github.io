@@ -3,4 +3,37 @@ layout: home
 title: Home
 ---
 
-Welcome to my portfolio site!
+<section class="intro"></section>
+    <h1>Hi, I am EngJamesO</h1>
+    <h2>Data Science &amp; Drone Engineering | Building AI, Software &amp; Flying Machines</h2>
+    <p>
+        I am a Data Scientist and Drone Engineer with a passion for building AI, software, and flying machines. My work focuses on creating innovative solutions that leverage data and technology to solve real-world problems.
+    </p>
+</section>
+
+<section class="featured-projects">
+  <h2>Featured Projects</h2>
+  <ul>
+    {% for project in site.data.projects limit:2 %}
+      <li>
+        <strong>{{ project.name }}</strong>: {{ project.description }}
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="/projects.html">See all projects &rarr;</a>
+</section>
+
+<section class="current-mission">
+  <h2>Current Mission</h2>
+  <p>Empowering industries with AI-driven drone solutions for smarter data collection, analysis, and automation. Currently building autonomous Unmanned Aerial Systems for industry.</p>
+</section>
+
+<section class="contact-section">
+  <h2>Contact</h2>
+  <ul class="contact-list">
+    <li>Email: <a href="mailto:james.o.oluwadare@gmail.com">james.o.oluwadare@gmail.com</a></li>
+    <li>LinkedIn: <a href="https://linkedin.com/in/engjameso" target="_blank">linkedin.com/in/engjameso</a></li>
+    <li>Twitter: <a href="https://twitter.com/engjameso" target="_blank">@engjameso</a></li>
+    <li>GitHub: <a href="https://github.com/eng-james-o" target="_blank">github.com/eng-james-o</a></li>
+  </ul>
+</section>

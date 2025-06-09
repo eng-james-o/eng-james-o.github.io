@@ -7,7 +7,7 @@ title: Projects
 <ul>
   {% for project in site.data.projects %}
     <li>
-      <strong>{{ project.name }}</strong>: {{ project.description }}
+      <a href="{{ project.link }}"><strong>{{ project.title }}</strong></a>: {{ project.description }}
     </li>
   {% endfor %}
 </ul>

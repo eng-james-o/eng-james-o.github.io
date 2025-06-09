@@ -1,4 +1,7 @@
 - name: 4G-Controlled Surveillance Drone
   description: Building a fixed-wing drone that can be controlled over 4G networks, allowing for remote surveillance and monitoring.
+  link: /projects/4g-controlled-surveillance-drone.html
+
 - name: Airfm
   description: A software for drone builders to create, manipulate, analyse and compare airfoils, to simplify the workflow of designing and building drones.
+  link: /projects/airfm.html

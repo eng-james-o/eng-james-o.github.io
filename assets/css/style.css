@@ -1,10 +1,16 @@
 /* Basic Jekyll portfolio styles */
+html, body {
+  height: 100%;
+}
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: #f9f9f9;
   color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 header, footer {
   background: #222;
@@ -20,6 +26,7 @@ header nav a:hover {
   text-decoration: underline;
 }
 main {
+  flex: 1 0 auto;
   padding: 2em;
   max-width: 800px;
   margin: 0 auto;
@@ -29,4 +36,57 @@ main {
 footer {
   text-align: center;
   font-size: 0.9em;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(100, 220, 255, 0.25);
+  border-radius: 1.5em;
+  padding: 0.75em 2em;
+  margin: 1.5em auto 2em auto;
+  max-width: 700px;
+  box-shadow: 0 2px 12px rgba(100,220,255,0.10);
+  backdrop-filter: blur(6px);
+}
+nav a {
+  color: #007c91;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 0.3em 1em;
+  border-radius: 1em;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover, nav a:focus {
+  background: rgba(0, 124, 145, 0.12);
+  color: #004d5c;
+}
+.featured-projects, .current-mission, .contact-section {
+  background: #f0fbff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 8px rgba(100,220,255,0.07);
+  padding: 2em 1.5em;
+  margin-bottom: 2em;
+}
+.featured-projects h2, .current-mission h2, .contact-section h2 {
+  color: #007c91;
+  margin-top: 0;
+}
+.featured-projects ul, .contact-list {
+  list-style: none;
+  padding: 0;
+}
+.featured-projects li {
+  margin-bottom: 0.7em;
+}
+.contact-list li {
+  margin-bottom: 0.5em;
+}
+.contact-list a {
+  color: #007c91;
+  text-decoration: underline;
+}
+.contact-list a:hover {
+  color: #004d5c;
 }
