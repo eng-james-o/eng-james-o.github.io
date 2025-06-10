@@ -1,7 +1,11 @@
 <nav>
-  <a href="/">Home</a> |
-  <a href="/projects.html">Projects</a> |
-  <a href="/blog.html">Blog</a> |
-  <a href="/about.html">About</a> |
-  <a href="/contact.html">Contact</a>
+  {% if page.url contains '/projects/' or page.layout == 'post' %}
+    <a href="{{ page.url contains '/projects/' | ternary: '/projects.html', '/blog.html' }}" class="back-btn">&larr; Back</a>
+  {% endif %}
+  <!-- the back button displays correctly, but is too high, and the navigation link doesnt work yet -->
+  <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+  <a href="/projects.html" class="{% if page.url == '/projects.html' or page.url contains '/projects/' %}active{% endif %}">Projects</a>
+  <a href="/blog.html" class="{% if page.url == '/blog.html' or page.layout == 'post' %}active{% endif %}">Blog</a>
+  <a href="/about.html" class="{% if page.url == '/about.html' %}active{% endif %}">About</a>
+  <a href="/contact.html" class="{% if page.url == '/contact.html' %}active{% endif %}">Contact</a>
 </nav>

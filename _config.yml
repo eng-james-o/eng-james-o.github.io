@@ -1,6 +1,6 @@
 # Site settings
 
-title: "EngJamesO Portfolio"
+title: EngJamesO
 description: "A personal portfolio built with Jekyll"
 baseurl: ""
 url: "https://eng-james-o.github.io"

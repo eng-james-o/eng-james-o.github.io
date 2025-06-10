@@ -1,7 +1,23 @@
 - name: 4G-Controlled Surveillance Drone
+  type: hardware, software
   description: Building a fixed-wing drone that can be controlled over 4G networks, allowing for remote surveillance and monitoring.
   link: /projects/4g-controlled-surveillance-drone.html
+  tools: [ArduPilot, PX4, 4G/LTE, Python, Mission Planner, Raspberry Pi]
 
 - name: Airfm
+  type: software
   description: A software for drone builders to create, manipulate, analyse and compare airfoils, to simplify the workflow of designing and building drones.
   link: /projects/airfm.html
+  tools: [Python, Qt QML, NumPy, Matplotlib]
+
+- name: Uk-stock-market-forecasting
+  type: software
+  description: A machine learning project to use various deep learning architectures to forecast the movement of the FTSE-100 index of the UK stock market, incorporating 15 financial indices. Machine learning models used include CNN-LSTM hybrid model,  GRU model.
+  link: /projects/uk-stock-dl.html
+  tools: [scikit-learn, keras, TensorFlow, NumPy, pandas, Matplotlib]
+
+- name: Drone Conceptual Design software
+  type: software
+  description: A software for drone builders to perform conceptual design calculations and compare propeller performance data, to simplify the workflow of designing and building drones.
+  link: /projects/drone-conceptual-design.html
+  tools: [Python, PySide2, NumPy, Matplotlib]

@@ -4,4 +4,18 @@ title: Contact
 ---
 
 <h1>Contact</h1>
-<p>Email: james.o.oluwadare@gmail.com</p>
+<ul class="contact-list">
+  <li><strong>Email:</strong> <a href="mailto:james.o.oluwadare@gmail.com">james.o.oluwadare@gmail.com</a></li>
+  <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/engjameso" target="_blank">linkedin.com/in/engjameso</a></li>
+</ul>
+
+<h2>Send Me a Message</h2>
+<form action="https://formspree.io/f/mwkgyyqg" method="POST" class="contact-form">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="5" required></textarea><br><br>
+  <button type="submit">Send</button>
+</form>
