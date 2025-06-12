@@ -53,9 +53,12 @@ footer {
   color: #fff;
   text-align: center;
   font-size: 0.9em;
-  padding: 2em 2em 1em 2em;
+  padding: 1em;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 nav {
   display: flex;
@@ -64,8 +67,8 @@ nav {
   background: rgba(100, 220, 255, 0.25);
   border-radius: 1.5em;
   padding: 0.75em 2em;
-  margin: 1.5em auto 2em auto;
-  max-width: 70%;
+  margin: 5% 10% 5% 11%;
+  max-width: 75%;
   box-shadow: 0 2px 12px rgba(100,220,255,0.10);
   backdrop-filter: blur(6px);
   margin-top: 1.5em;
@@ -277,23 +280,30 @@ nav a.active {
   padding: 1em;
 }
 .hamburger {
-  display: none;
+  display: none;  /* Hidden by default for desktop */
   background: none;
   border: none;
   cursor: pointer;
-  position: fixed;
-  left: 1em;
-  top: 1em;
-  z-index: 1002;
   padding: 0.5em;
+  z-index: 1002;
+  transition: transform 0.3s ease;
+  
+  /* Better touch target size */
+  min-width: 35px;
+  min-height: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hamburger span {
   display: block;
   width: 24px;
-  height: 2px;
-  margin: 6px 0;
+  height: 3px;
+  margin: 2px 0;
   background: #007c91;
   transition: 0.3s ease;
+  transform-origin: center;
+  border-radius: 1em;
 }
 .nav-links {
   display: flex;
@@ -416,66 +426,114 @@ nav a.active {
 }
 
 @media (max-width: 900px) {
-  .navbar {
-    padding: 0;
+  nav.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em;
+    justify-content: flex-start;
+    z-index: 1000;
+    background: transparent;
   }
-  
+
   .hamburger {
-    display: block;
+    display: flex;  /* Show only on mobile */
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 1002;
+    background: #fff;
+    border-radius: 0.8em;
+    padding: 0.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links {
     position: fixed;
-    left: -100%;
     top: 0;
+    left: 0;  /* Start at left edge */
     height: 100vh;
-    width: 250px;
+    width: 280px;
     background: #fff;
     flex-direction: column;
     align-items: flex-start;
-    padding: 4em 1.5em 1.5em;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    padding: 4.5em 1.5em 1.5em;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
     z-index: 1001;
+    transform: translateX(-100%);  /* Move off-screen */
+    transition: transform 0.3s ease;
+    will-change: transform;  /* Optimize for animations */
   }
-
   body.nav-open .nav-links {
-    left: 0;
+    transform: translateX(0);  /* Slide in to visible area */
   }
 
   .nav-links a {
-    padding: 0.8em 0;
-    width: 100%;
+    padding: 0.8em 1em;
+    width: 80%;
     text-align: left;
+    display: block;  /* Ensure full clickable area */
+  }
+
+  body.nav-open .hamburger span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  body.nav-open .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  body.nav-open .hamburger span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  footer {
+    margin-top: 2em;
+    padding: 0em 1em;
+    border-radius: 0;
+  }
+
+  main {
+    padding: 1.5em;
+    margin-top: 4.5em;
   }
 }
 
 @media (max-width: 600px) {
+  main {
+    padding: 1em;
+    margin-top: 4em;
+  }
+  
+  nav {
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    max-width: 90%;
+  }
+  
+  .featured-projects, .current-mission, .contact-section, .tech-stack {
+    padding: 1.5em 1em;
+    margin-bottom: 1.5em;
+  }
+}
+
+/* Hide navigation from screen readers when closed on mobile */
+@media (max-width: 900px) {
+  .nav-links[aria-hidden="true"] {
+    visibility: hidden;
+  }
+  
   .nav-links {
-    width: 80%;
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s;
   }
   
-  .social-link span {
-    font-size: 0.9em;
-  }
-  
-  .social-link {
-    padding: 0.6em 1em;
-  }
-  
-  .tech-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .tech-card {
-    padding: 1.2em;
-  }
-  
-  .tech-items {
-    gap: 0.6em;
-  }
-  
-  .tech-item {
-    font-size: 0.9em;
+  body:not(.nav-open) .nav-links {
+    transition: transform 0.3s ease, visibility 0s 0.3s;
   }
 }

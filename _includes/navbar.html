@@ -1,9 +1,9 @@
 <nav class="navbar">
-  <button class="hamburger" aria-label="Open navigation" onclick="document.body.classList.toggle('nav-open')">
+  <button class="hamburger" aria-label="Toggle navigation">
     <span></span><span></span><span></span>
   </button>
   <div class="nav-links">
-    {% comment %} --- Back button logic remains the same --- {% endcomment %}
+    {% comment %} --- Back button logic --- {% endcomment %}
     {% if page.url contains '/projects/' or page.layout == 'post' %}
       {% if page.url contains '/projects/' %}
         {% assign back_link = '/projects.html' | relative_url %}
@@ -13,7 +13,7 @@
       <a href="{{ back_link }}" class="back-btn">&larr; Back</a>
     {% endif %}
     
-    {% comment %} --- Main Navigation Links with Corrected Logic --- {% endcomment %}
+    {% comment %} --- Main Navigation Links --- {% endcomment %}
     <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
     
     <a href="{{ '/projects.html' | relative_url }}" class="{% if page.url == '/projects.html' or page.url contains '/projects/' %}active{% endif %}">Projects</a>
@@ -25,23 +25,3 @@
     <a href="{{ '/contact.html' | relative_url }}" class="{% if page.url == '/contact.html' %}active{% endif %}">Contact</a>
   </div>
 </nav>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Close nav drawer when clicking outside
-    document.addEventListener('click', function(event) {
-      const navbar = document.querySelector('.navbar');
-      const isClickInside = navbar.contains(event.target);
-      
-      if (!isClickInside && document.body.classList.contains('nav-open')) {
-        document.body.classList.remove('nav-open');
-      }
-    });
-
-    // Close nav drawer when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        document.body.classList.remove('nav-open');
-      });
-    });
-  });
-</script>
