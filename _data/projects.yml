@@ -2,7 +2,7 @@
   type: hardware, software
   description: Building a fixed-wing drone that can be controlled over 4G networks, allowing for remote surveillance and monitoring.
   link: /projects/4g-controlled-surveillance-drone.html
-  tools: [ArduPilot, PX4, 4G/LTE, Python, Mission Planner, Raspberry Pi]
+  tools: [ArduPilot, Pixhawk, 4G/LTE, Python, Mission Planner, Raspberry Pi]
 
 - name: Airfm
   type: software
