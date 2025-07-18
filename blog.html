@@ -4,11 +4,14 @@ title: Blog
 ---
 
 <h1>Blog</h1>
-<ul>
+<div class="posts-grid">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date: "%B %d, %Y" }}</small>
-    </li>
+    <div class="post-card">
+      <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+      <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+      <a href="{{ post.url }}" class="read-more">Read more &rarr;</a>
+    </div>
   {% endfor %}
-</ul>
+</div>
 <p style="margin-top:2em;"><a href="/feed.xml" target="_blank" class="rss-link">Subscribe via RSS</a></p>

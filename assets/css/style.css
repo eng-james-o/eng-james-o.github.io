@@ -27,7 +27,7 @@ header {
 header h1 {
   display: none;
 }
-header, footer {
+header {
   background: #ddfcff24;
   color: #fff;
   padding: 1em 2em;
@@ -52,9 +52,13 @@ main {
   margin-top: 5.5em;
   border-radius: 1.2em;
 }
-footer {
-  /* background: #1a2327; */
-  background: #3b82f6;
+footer.parent{
+  width: 100%;
+}
+
+footer.child {
+  background: #1a2327;
+  /* background: #3b82f6; */
   color: #fff;
   text-align: center;
   font-size: 0.9em;
@@ -62,8 +66,6 @@ footer {
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   margin-top: auto;
-  width: 100%;
-  box-sizing: border-box;
 }
 nav {
   display: flex;
@@ -149,7 +151,7 @@ nav a.active {
 }
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  min-width: 85%;
   padding: 0.6em;
   margin-top: 0.2em;
   margin-bottom: 1em;
@@ -158,8 +160,13 @@ nav a.active {
   font-size: 1em;
   background: #fff;
 }
+.contact-form textarea {
+  min-height: 3em;
+  max-height: 10em;
+  max-width: 90%;
+}
 .contact-form button {
-  background: #007c91;
+  background: #0284d5;
   color: #fff;
   border: none;
   border-radius: 1em;
@@ -170,19 +177,9 @@ nav a.active {
   transition: background 0.2s;
 }
 .contact-form button:hover {
-  background: #004d5c;
+  background: #1ba7ff;
 }
-.intro-block {
-  display: flex;
-  flex-direction: col;
-  align-items: left;
-}
-.intro-block img {
-  max-width: 100%;
-  border-radius: 1.5em;
-  padding:15px;
-  max-height: 200px;
-}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -307,13 +304,13 @@ nav a.active {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5em;
+  padding: 1em 1em;
   z-index: 1002;
   transition: transform 0.3s ease;
   
   /* Better touch target size */
   min-width: 45px;
-  min-height: 30px;
+  min-height: 35px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -450,9 +447,73 @@ nav a.active {
 }
 
 section {
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
+  width: 90%;
 }
 
+/* Blog posts grid and card styles */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2em;
+  margin: 2em 0;
+}
+.post-card {
+  background: #f0fbff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 12px rgba(100,220,255,0.10);
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.post-card:hover {
+  box-shadow: 0 6px 24px rgba(100,220,255,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+.post-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #007c91;
+  text-decoration: none;
+  margin-bottom: 0.5em;
+  transition: color 0.2s;
+}
+.post-title:hover {
+  color: #004d5c;
+  text-decoration: underline;
+}
+.post-meta {
+  color: #007c91;
+  font-size: 1em;
+  margin-bottom: 1em;
+  opacity: 0.85;
+}
+.post-excerpt {
+  margin: 0.5em 0 1.2em 0;
+  color: #222;
+  font-size: 1.08em;
+}
+.read-more {
+  color: #007c91;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-top: auto;
+  align-self: flex-end;
+  transition: color 0.2s;
+}
+.read-more:hover {
+  color: #004d5c;
+}
+.rss-link {
+  color: #007c91;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.rss-link:hover {
+  color: #004d5c;
+}
 
 @media (max-width: 900px) {
   nav {
@@ -461,7 +522,8 @@ section {
   }
 
   nav.navbar {
-    display: flex;
+    display: contents;
+    /* display: flex; */
     position: fixed;
     top: 0;
     left: 0;
@@ -529,46 +591,40 @@ section {
   body.nav-open .hamburger span:last-child {
     transform: translateY(-6px) rotate(-45deg);
   }
-  footer {
-    margin-top: 2em;
-    padding: 0em;
-    border-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    width: 100vw;
-    left: 0;
-    right: 0;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
-  }
+  
   main {
     padding: 1.5em;
-    margin-top: 4.5em;
-    margin: 2em;
+    margin: 0;
+    margin-top: 3em;
   }
   .intro-block {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    align-items: flex-start;
+    align-items: center;
+    /* align-items: flex-start; */
   }
   .intro-block img {
-    max-width: 40%;
-    margin-right: 2em;
+    max-width: 90%;
+    /* margin-right: auto; */
     border-radius: 1.5em;
-    padding: 15px;
+    padding: 0.5em;
+    align-self: center;
   }
 }
 
 /* Desktop: row flex for .intro-block */
-@media (min-width: 901px) {
+@media (min-width: 701px) {
   .intro-block {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  
+  .intro-block img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 1.5em;
+    padding: 0.5em;
+  }
 }
 
 /* Consistent about page card styling */
