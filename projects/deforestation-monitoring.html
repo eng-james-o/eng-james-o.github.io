@@ -10,14 +10,13 @@ permalink: /projects/deforestation-monitoring.html
           This project builds a reproducible pipeline in <strong>Google Earth Engine</strong> (JavaScript & Python/Colab) to detect and quantify
           <em>deforestation</em> and <em>water surface dynamics</em> across South Africa (with focus regions like KwaZulu‑Natal). Outputs feed ArcGIS Online maps & dashboards and support carbon credit monitoring, reporting, and verification (MRV).
         </p>
-        <div class="badges" aria-label="Tech stack">
-          <span class="badge">Sentinel‑1 SAR</span>
-          <span class="badge">Sentinel‑2 MSI</span>
-          <span class="badge">Hansen GFC</span>
-          <span class="badge">Google Dynamic World</span>
-          <span class="badge">Earth Engine JS + Python</span>
-          <span class="badge">GeoTIFF/COG → ArcGIS</span>
-        </div>
+        <p>
+          Tech stack 
+        </p>
+        <ul>
+          <li>Google Earth Python API</li>
+          <li>GeoTIFF/COG →ArcGIS Online</li>
+        </ul>
       </section>
 
       <section class="grid" aria-label="Highlights">
@@ -32,6 +31,7 @@ permalink: /projects/deforestation-monitoring.html
             <div class="kpi"><div class="v">Province</div><div class="l">Tile‑wise processing</div></div>
           </div>
         </article>
+
         <article class="card span-6">
           <h2>Datasets</h2>
           <ul class="list">
@@ -40,6 +40,10 @@ permalink: /projects/deforestation-monitoring.html
             <li><strong>Google Dynamic World</strong> yearly class probabilities (Trees class).</li>
             <li><strong>Hansen GFC</strong> tree cover baseline & annual loss reference.</li>
             <li><strong>Administrative boundaries</strong> (e.g., FAO GAUL) for province‑level stats.</li>
+            <li><strong>Sentinel-5P OFFL CH4</strong> for methane emission hotpots</li>
+            <li><strong>JRC Monthly Water History</strong> for river network and dynamics</li>
+            <li>Landsat 8 TOA Reflectance</li>
+
           </ul>
         </article>
 
@@ -58,15 +62,11 @@ permalink: /projects/deforestation-monitoring.html
           <h2>Deliverables & Exports</h2>
           <ul class="list">
             <li><strong>Raster</strong>: GeoTIFF / COG (deforestation, indices, water maps).</li>
-            <li><strong>Vectors / Tables</strong>: GeoJSON/Shapefile/CSV (polygons, samples, stats).</li>
-            <li><strong>Time‑series</strong>: CSV of yearly/provincial metrics (2015–2024).</li>
+            <li><strong>Vectors / Tables</strong>: GeoJSON / Shapefile / CSV (polygons, samples, stats).</li>
+            <li><strong>Time‑series</strong>: CSV of yearly/ provincial metrics (2015–2024).</li>
             <li><strong>Dynamic tiles</strong>: Earth Engine map tiles for quick previews.</li>
             <li><strong>ArcGIS</strong>: Hosted imagery/feature layers → Dashboard cards & charts.</li>
           </ul>
-          <div class="actions">
-            <a class="btn" href="#contact">Get in touch</a>
-            <a class="btn secondary" href="https://eng-james-o.github.io">More projects</a>
-          </div>
         </article>
 
         <article class="card span-12">
@@ -94,10 +94,7 @@ permalink: /projects/deforestation-monitoring.html
           <h2>Contact</h2>
           <p>Want a similar pipeline for your region or project?</p>
           <p class="pill" aria-label="email">
-            <span>📧</span> <a href="mailto:eng.james.o@gmail.com">eng.james.o@gmail.com</a>
-          </p>
-          <p class="pill" aria-label="portfolio">
-            <span>🗂️</span> <a href="https://eng-james-o.github.io">eng-james-o.github.io</a>
+            <a href="mailto:james.o.oluwadare@gmail.com">eng.james.o@gmail.com</a>
           </p>
         </article>
       </section>
