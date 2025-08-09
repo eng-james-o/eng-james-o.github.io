@@ -10,6 +10,12 @@
   link: /projects/airfm.html
   tools: [Python, Qt QML, NumPy, Matplotlib]
 
+- name: SA Deforestation Monitoring 
+  type: analysis
+  description: An analysis to discover the amounts and areas of deforestation within South Africa using satellite imagery. The analysis also monitors major changes in river network and carbon stocks and emissions.
+  link: /projects/deforestation-monitoring.html
+  tools: [Python, JavaScript, Google Earth Engine,Google Colab, ArcGIS]
+
 - name: Uk-stock-market-forecasting
   type: software
   description: A machine learning project to use various deep learning architectures to forecast the movement of the FTSE-100 index of the UK stock market, incorporating 15 financial indices. Machine learning models used include CNN-LSTM hybrid model,  GRU model.
