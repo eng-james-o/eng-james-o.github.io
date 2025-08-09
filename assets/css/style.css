@@ -695,7 +695,7 @@ section {
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  font-size: 1.1em;
+  font-size: 1em;
   background: #f7f7fa;
   border-radius: 8px;
   padding: 0.5em 1em;
@@ -706,7 +706,7 @@ section {
 .skill-icon {
   margin-right: 0.5em;
   color: #3b82f6;
-  font-size: 1.2em;
+  font-size: 1em;
   height: 1.5em;
   width: 1.5em;
   vertical-align: middle;
