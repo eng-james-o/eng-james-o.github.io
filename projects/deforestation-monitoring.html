@@ -2,6 +2,7 @@
 layout: default
 title: Monitoring Deforestation using Satellite Imagery 
 permalink: /projects/deforestation-monitoring.html
+mermaid: true
 ---
 
 <section class="hero" aria-labelledby="hero-title">
@@ -17,9 +18,60 @@ permalink: /projects/deforestation-monitoring.html
           <li>Google Earth Python API</li>
           <li>GeoTIFF/COG →ArcGIS Online</li>
         </ul>
-      </section>
+</section>
 
-      <section class="grid" aria-label="Highlights">
+
+
+<section>
+  <h2>Workflow Diagram</h2>
+
+  {% raw %}<div class="mermaid">
+flowchart LR
+  subgraph Data["Data Sources"]
+    S1["Sentinel-1 SAR (VV/VH)"]
+    S2["Sentinel-2 SR (NDVI/NDWI)"]
+    DW["Dynamic World (Trees prob.)"]
+    HAN["Hansen GFC (baseline & loss)"]
+    GAUL["FAO GAUL (province boundary)"]
+  end
+
+  subgraph EE["Earth Engine Processing"]
+    A["Ingest & Preprocess\n(cloud mask, SAR prep, clip)"]
+    B["Annual Composites 2015–2024\n(NDVI/NDWI, DW Trees mean)"]
+    C["Change Detection\n(NDVI/DW transitions, SAR cues)"]
+    D["Post-process & Vectorize\n(min-area filters, cleaning)"]
+    E["Summaries & QA/QC sample points"]
+  end
+
+  subgraph Exports["Exports"]
+    R1["COG/GeoTIFF rasters"]
+    V1["GeoJSON/Shapefile vectors"]
+    T1["CSV time series"]
+    M1["EE Tile Service / titiler"]
+  end
+
+  subgraph Tools["Apps"]
+    QG["QGIS\nvisualize/edit/validate"]
+    AG["ArcGIS Online\nhost layers & dashboard"]
+  end
+
+  Data --> A
+  A --> B --> C --> D --> E
+  E --> R1
+  E --> V1
+  E --> T1
+  B --> M1
+
+  R1 --> QG
+  R1 --> AG
+  V1 --> AG
+  T1 --> AG
+  M1 --> AG
+</div>{% endraw %}
+</section>
+
+
+<section class="grid" aria-label="Highlights">
         <article class="card span-6">
           <h2>Why</h2>
           <p>
@@ -102,4 +154,4 @@ permalink: /projects/deforestation-monitoring.html
       <section class="card span-12" aria-label="Notes">
         <h2>Notes</h2>
         <p class="muted">This page summarises a living project. Selected live maps/dashboards may be embedded later via ArcGIS or Earth Engine tile URLs.</p>
-      </section>
+</section>
