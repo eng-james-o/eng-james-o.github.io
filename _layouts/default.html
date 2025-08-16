@@ -14,6 +14,18 @@
     <main>
       {{ content }}
     </main>
+
+    {% raw %}{% if page.mermaid or layout.mermaid %}
+      <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js">
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          mermaid.initialize({ startOnLoad: true, theme: prefersDark ? 'dark' : 'default' });
+        });
+      </script>
+    {% endif %}{% endraw %}
+
     <footer class="parent">
       {% include footer.html %}
     </footer>
