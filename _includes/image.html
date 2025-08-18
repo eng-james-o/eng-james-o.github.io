@@ -1,0 +1,8 @@
+{% if include.src %}
+  <figure>
+    <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" class="img-fluid">
+    {% if include.caption %}
+      <figcaption>{{ include.caption }}</figcaption>
+    {% endif %}
+  </figure>
+{% endif %}
