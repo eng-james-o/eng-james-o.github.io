@@ -1,4 +1,12 @@
 /* Basic Jekyll portfolio styles */
+/* Responsive image class */
+.img-fluid {
+  max-width: 95%;
+  height: auto;
+  display: block;
+  border-radius:1em;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
 html, body {
   height: 100%;
 }
@@ -98,12 +106,19 @@ nav a.active {
   color: #fff !important;
   box-shadow: 0 2px 8px rgba(0,124,145,0.10);
 }
-.featured-projects, .current-mission, .contact-section, .tech-stack .intro .posts {
+.tech-stack .intro .posts {
+  background: #f0fbff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 8px rgba(100,220,255,0.07);
+  /* padding: 2em 1.5em; */
+  margin-bottom: 2em;
+}
+.mission-card {
   background: #f0fbff;
   border-radius: 1.2em;
   box-shadow: 0 2px 8px rgba(100,220,255,0.07);
   padding: 2em 1.5em;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
 }
 .featured-projects h2, .current-mission h2, .contact-section h2, .tech-stack h2, .skills h2 {
   color: #007c91;
@@ -140,9 +155,9 @@ nav a.active {
   background: #f0fbff;
   border-radius: 1.2em;
   box-shadow: 0 2px 8px rgba(100,220,255,0.07);
-  padding: 2em 1.5em;
+  padding: 1em;
   max-width: 700px;
-  width: 100%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -182,9 +197,15 @@ nav a.active {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2em;
-  margin: 2em 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  border-radius: 1.2em;
+  padding: 1.5em;
+  /* margin-bottom: 2em; */
+  
+  background: #f0fbff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 8px rgba(100,220,255,0.07);
 }
 .project-card {
   background: #f0fbff;
@@ -448,7 +469,13 @@ nav a.active {
 
 section {
   padding-bottom: 1em;
-  width: 90%;
+  width: 100%;
+}
+
+section p {
+  margin: 0.5em 0;
+  text-align: justify;
+  color: #222;
 }
 
 /* Blog posts grid and card styles */
@@ -666,6 +693,13 @@ section {
 
 /* Contact grid/flex layout for social links */
 .contact-grid {
+  background: #f0fbff;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 8px rgba(100,220,255,0.07);
+  padding: 1.5em;
+  /* padding: 2em 1.5em; */
+  /* margin-bottom: 2em; */
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;

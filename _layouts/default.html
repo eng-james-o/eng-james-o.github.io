@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    {% raw %}{% if page.mermaid or layout.mermaid %}
+    {% if page.mermaid or layout.mermaid %}
       <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js">
       </script>
       <script>
@@ -16,7 +16,7 @@
           mermaid.initialize({ startOnLoad: true, theme: prefersDark ? 'dark' : 'default' });
         });
       </script>
-    {% endif %}{% endraw %}
+    {% endif %}
     
   </head>
   <body>

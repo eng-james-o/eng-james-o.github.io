@@ -11,7 +11,7 @@ title: Home
         <h1>Hi, I am EngJamesO</h1>
         <h2>Machine Learning &amp; Drone Engineering &amp; Geospatial Intelligence</h2>
         <p>
-        I am a Data Scientist and Drone Engineer with a passion for building AI, software, and Unmanned Aerial Systems. My passion is to create innovative solutions that leverage data and technology to solve real-world problems.
+        I am a Data Scientist and Drone Engineer with a passion for building AI, software, and Unmanned Aerial Systems. My passion is to create innovative solutions that leverage data and technology to solve real-world problems. I have a background in Mechanical Engineering (Aeronautics) and extensive experience in UAV systems, machine learning, and geospatial intelligence.
         </p>
       </div>
       <img src="assets/images/James.jpg" alt="picture of EngJamesO smiling"/>
@@ -108,19 +108,24 @@ title: Home
 
 <section class="featured-projects">
   <h2>Featured Projects</h2>
+  <div class="projects-grid">
   <ul>
     {% for project in site.data.projects limit:3 %}
       <li>
-        <strong>{{ project.name }}</strong>: {{ project.description }}
+        <strong>{{ project.name }}</strong> <br/> {{ project.description }}
       </li>
     {% endfor %}
   </ul>
+  
   <a href="/projects.html">See all projects &rarr;</a>
+  </div>
 </section>
 
 <section class="current-mission">
   <h2>Current Mission</h2>
-  <p>Empowering industries with AI-driven drone solutions for smarter data collection, analysis, and automation. Currently building autonomous Unmanned Aerial Systems for industry, and enabling research and innovation in the drone sector, while building capacity through STEM education.</p>
+  <div class="mission-card">
+    <p>Empowering industries with AI-driven drone solutions for smarter data collection, analysis, and automation. Currently building autonomous Unmanned Aerial Systems for industry, and enabling research and innovation in the drone sector, while building capacity through STEM education.</p>
+  </div>
 </section>
 
 <section class="contact-section">
