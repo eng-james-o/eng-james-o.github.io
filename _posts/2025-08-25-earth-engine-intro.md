@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Intro to Google Earth Engine: a tool for Geospatial Data Analysts"
-date: 2025-08-25 20:00:00
+date: 2025-08-25 00:10:05
 readtime: 6
 tags: ["EarthEngine", "EarthObservation", "Python", "JavaScript", "GIS", "GeospatialData", "Map"]
 ---
