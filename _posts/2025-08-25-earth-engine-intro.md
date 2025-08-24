@@ -2,11 +2,14 @@
 layout: post
 title: "An Intro to Google Earth Engine: a tool for Geospatial Data Analysts"
 date: 2025-08-25 20:00:00
-readtime: 4
+readtime: 6
 tags: ["EarthEngine", "EarthObservation", "Python", "JavaScript", "GIS", "GeospatialData", "Map"]
 ---
 
+
 In the last decade, the explosion of satellite imagery and remote sensing data has reshaped how we understand our planet. Yet, the challenge has always been scale: how do you process, analyze, and extract insights from petabytes of geospatial data? Enter Google Earth Engine (GEE)—a cloud-based geospatial analysis platform that empowers analysts, researchers, and decision-makers to harness the power of satellite data without the constraints of local computing.
+
+---
 
 ## What is Google Earth Engine?
 
