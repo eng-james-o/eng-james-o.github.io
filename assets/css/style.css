@@ -296,15 +296,19 @@ nav a.active {
 }
 .post-content {
   margin-top: 1.5em;
-  font-size: 1.13em;
-  line-height: 1.7;
+  font-size: 1.1em;
+  line-height: 1.2;
   color: #222;
+  padding: 0.5em 0.8em;
+  word-break: break-word;
+  box-sizing: border-box;
 }
+
 .post-content img {
   max-width: 100%;
-  border-radius: 1em;
+  border-radius: 1.2em;
   box-shadow: 0 2px 8px rgba(100,220,255,0.10);
-  margin: 1.5em 0;
+  margin: 0.8em 0;
 }
 .post-content a {
   color: #007c91;
