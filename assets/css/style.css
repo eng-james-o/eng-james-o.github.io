@@ -377,14 +377,14 @@ nav a.active {
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.8em;
   margin-top: 1em;
 }
 
 .social-link {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 0.8em;
   width: fit-content;
   padding: 0.5em 0.6em;
   background: #f0fbff;
@@ -396,8 +396,8 @@ nav a.active {
 }
 
 .social-link i {
-  font-size: 1.2em;
-  width: 1.4em;
+  font-size: 1em;
+  width: 1.2em;
   text-align: center;
 }
 
