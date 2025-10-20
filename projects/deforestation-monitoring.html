@@ -26,27 +26,53 @@ mermaid: true
 
   {% raw %}<div class="mermaid">
 flowchart TD
-  subgraph Data["Data Sources"]
+  subgraph Data["Data"]
     S1["Sentinel-1 SAR (VV/VH)"]
-    S2["Sentinel-2 SR (NDVI/NDWI)"]
+    S2["Sentinel-2 SR"]
     L5["Landsat 5 (Temperature)"]
     OSM["OpenStreetMap (Rivers & Dams)"]
     DW["Dynamic World (Trees prob.)"]
-    HAN["Hansen GFC (baseline & loss)"]
     GAUL["FAO GAUL (province boundary)"]
+    METH["Sentinel 5p (Methane"]
+    CARBON["WCMC Biomass carbon density"]
+    ESA["LULC"]
   end
+          
+  subgraph Water["Water MRV"]
+    SarWater["Detect water in SAR using Otsu"]
+    Mndwi["Detect water using MNDWI"]
+  end
+  SarWater --> Mndwi
 
-  subgraph EE["Earth Engine Processing"]
+  subgraph Change["Change detection"]
+    waterchange["Detect changes in water (Gain and Loss)"]
+    forestchange["Detect changes in forest (Gain and Loss)"]
+    carbonchange["Detect changes in carbon density (Gain and Loss)"]
+  end
+  waterchange --> forestchange --> carbonchange
+          
+  subgraph Carbon["Carbon MRV"]
+    RF["Use Random Forest to predict csrbon density from spectral indices"]
+    Emission["Identify high emission hotspots"]
+  end
+  RF --> Emission
+          
+  subgraph Forest["Forest MRV"]
+    Indices["Use NDVI to identify forests"]
+    LULC["Use LULC to monitor forest cover changes"]
+  end
+  Indices --> LULC
+          
+  subgraph Processing["Processing steps"]
     A["Ingest & Preprocess <br/> (cloud mask, SAR prep, clip)"]
-    B["Annual Composites 2015–2024<br/>(NDVI/NDWI, DW Trees mean)"]
-    C["Change Detection<br/>(NDVI/DW transitions, SAR cues)"]
+    B["Annual Composites 2015–2024<br/>(NDVI/NDWI, DW Trees mean)"] 
     D["Post-process & Vectorize<br/>(min-area filters, cleaning)"]
-    E["Summaries & QA/QC sample points"]
+    E["Ground validation sample points"]
   end
 
   subgraph Exports["Exports"]
-    R1["COG/GeoTIFF rasters"]
-    V1["GeoJSON/Shapefile vectors"]
+    R1["GeoTIFF rasters"]
+    V1["Shapefile/CSV vectors"]
     T1["CSV time series"]
     M1["EE Tile Service / titiler"]
   end
@@ -57,7 +83,12 @@ flowchart TD
   end
 
   Data --> A
-  A --> B --> C --> D --> E
+  A --> B
+  B --> Water
+  B --> Carbon
+  B --> Forest
+  
+  D --> Change --> E
   E --> R1
   E --> V1
   E --> T1
@@ -97,7 +128,7 @@ flowchart TD
   <article class="card span-6">
     <h2>Methodology</h2>
       <ol class="list">
-        <li>CInitialization and Boundaries: Authenticate Google Earth Engine and define South Africa’s boundaries using FAO GAUL for standardized administrative units.</li>
+        <li>Initialization and Boundaries: Authenticate Google Earth Engine and define South Africa’s boundaries using FAO GAUL for standardized administrative units.</li>
         <li>Data Retrieval: Load Sentinel-1, Sentinel-2, Landsat 5 TM, and Landsat 8/9 (thermal bands) imagery, along with Hansen, Google Dynamic World, ESA WorldCover, HydroSHEDS (rivers), and OSM (dams).</li>
         <li>
           Processing and Analysis:
@@ -149,7 +180,7 @@ flowchart TD
           <p>Technologies Used</p>
           <ul>
             <li>Google Earth Engine API: For data access and processing.</li>
-            <li>Python Libraries: geemap, ee, folium (mapping and UI), scikit-learn (Random Forest), and others.</li>
+            <li>Python Libraries: geemap, ee, folium (mapping and UI), scikit-learn (Random Forest), google API (for exports to google drive snd colab UI elements).</li>
             <li>Environment: Colab with interactive UI elements.</li>
           </ul>
         </section>
