@@ -240,9 +240,9 @@ nav a.active {
   background: #f0fbff;
   border-radius: 1.2em;
   box-shadow: 0 2px 12px rgba(100,220,255,0.10);
-  padding: 2em 1.5em;
-  margin: 2em 0;
-  max-width: 700px;
+  padding: 1.5em 0.3em;
+  margin: 1.5em 0;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -252,7 +252,7 @@ nav a.active {
 .post h1 {
   margin-top: 0;
   color: #007c91;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 700;
 }
 .post-meta {
@@ -261,14 +261,14 @@ nav a.active {
 }
 .post-date {
   margin: 0;
-  font-size: 1.1em;
+  font-size: 1em;
   opacity: 0.9;
 }
 .post-tags {
   margin: 1em 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
+  gap: 0.3em;
   align-items: center;
 }
 .tags-label {
@@ -279,9 +279,9 @@ nav a.active {
   display: inline-block;
   background: #e6faff;
   color: #007c91;
-  padding: 0.3em 0.8em;
+  padding: 0.2em 0.5em;
   border-radius: 1em;
-  font-size: 0.9em;
+  font-size: 0.8em;
   transition: all 0.2s ease;
   border: 1px solid rgba(0, 124, 145, 0.2);
 }
@@ -296,10 +296,10 @@ nav a.active {
 }
 .post-content {
   margin-top: 1.5em;
-  font-size: 1.1em;
+  font-size: 0.9em;
   line-height: 1.2;
   color: #222;
-  padding: 0.5em 0.8em;
+  padding: 0.5em 0.3em;
   word-break: break-word;
   box-sizing: border-box;
 }
@@ -308,7 +308,7 @@ nav a.active {
   max-width: 100%;
   border-radius: 1.2em;
   box-shadow: 0 2px 8px rgba(100,220,255,0.10);
-  margin: 0.8em 0;
+  margin: 0.5em 0;
 }
 .post-content a {
   color: #007c91;
