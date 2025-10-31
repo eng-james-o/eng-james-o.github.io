@@ -1,0 +1,22 @@
+/* Custom syntax highlighting theme */
+.highlight .c1, .highlight .cm, .highlight .c, .highlight .cs {
+  color: #5c6370; /* Comment */
+}
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt {
+  color: #c678dd; /* Keyword */
+}
+.highlight .n, .highlight .nb, .highlight .nc, .highlight .no, .highlight .nd, .highlight .ni, .highlight .ne, .highlight .nf, .highlight .nl, .highlight .nn, .highlight .nx, .highlight .py, .highlight .na, .highlight .nt {
+  color: #e5c07b; /* Name, Tag Name */
+}
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .ss {
+  color: #98c379; /* String */
+}
+.highlight .mi, .highlight .mf, .highlight .m, .highlight .il, .highlight .mo {
+  color: #d19a66; /* Number */
+}
+.highlight .o, .highlight .ow {
+  color: #56b6c2; /* Operator */
+}
+.highlight .p, .highlight .pi {
+  color: #abb2bf; /* Punctuation */
+}

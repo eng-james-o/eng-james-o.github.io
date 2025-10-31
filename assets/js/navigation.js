@@ -47,4 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial ARIA states
     hamburger.setAttribute('aria-expanded', 'false');
     navLinks.setAttribute('aria-hidden', 'true');
+
+    // Add language identifier to code blocks
+    document.querySelectorAll('div.highlighter-rouge').forEach(div => {
+        const language = div.className.match(/language-([\w\-]+)/);
+        if (language) {
+            div.setAttribute('data-lang', language[1]);
+        }
+    });
 });

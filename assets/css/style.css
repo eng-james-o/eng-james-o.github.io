@@ -50,15 +50,14 @@ header nav a:hover {
 }
 main {
   flex: 1 0 auto;
-  padding: 2em;
+  padding: 4em 2em;
   max-width: 1200px;
-  width: 85vw;
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  width: 90vw;
+  margin: 0 auto;
+  background: transparent;
+  box-shadow: none;
   margin-top: 5.5em;
-  border-radius: 1.2em;
+  border-radius: 0;
 }
 footer.parent{
   width: 100%;
@@ -237,14 +236,9 @@ nav a.active {
   transform: translateY(-4px) scale(1.02);
 }
 .post {
-  background: #f0fbff;
-  border-radius: 1.2em;
-  box-shadow: 0 2px 12px rgba(100,220,255,0.10);
-  padding: 1.5em 0.3em;
-  margin: 1.5em 0;
+  padding: 2em 0;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -296,16 +290,16 @@ nav a.active {
 }
 .post-content {
   margin-top: 1.5em;
-  font-size: 0.9em;
-  line-height: 1.2;
-  color: #222;
-  padding: 0.5em 0.3em;
-  word-break: break-word;
-  box-sizing: border-box;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+  width: 100%;
 }
 
 .post-content img {
-  max-width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  display: block;
   border-radius: 1.2em;
   box-shadow: 0 2px 8px rgba(100,220,255,0.10);
   margin: 0.5em 0;
@@ -751,4 +745,51 @@ section p {
 }
 .skills-list li:hover {
   background: #e0e7ff;
+}
+
+/* Code block styles */
+div.highlighter-rouge {
+    background: #282c34;
+    color: #f8f8f2;
+    border-radius: 0.8em;
+    margin: 1.5em 0;
+    padding: 1em;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+div.highlighter-rouge::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+    color: #9da5b4;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.highlight {
+    background: none !important; /* Overwrite conflicting styles */
+    padding: 0;
+    margin: 0;
+}
+
+pre.highlight {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* Inline code styles */
+:not(pre) > code {
+  background: #e6faff;
+  color: #007c91;
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
 }
