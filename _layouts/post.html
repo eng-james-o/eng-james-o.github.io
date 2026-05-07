@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/syntax.css">
         {% if page.mermaid or layout.mermaid %}
@@ -24,6 +25,11 @@
     </header>
     <main>
     <article class="post">
+      {% if page.hero_image %}
+        <div class="post-hero">
+          <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: page.title }}">
+        </div>
+      {% endif %}
       <h1>{{ page.title }}</h1>
       <div class="post-meta">
         <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
@@ -48,6 +54,3 @@
     <script src="/assets/js/navigation.js"></script>
   </body>
 </html>
-
-
-

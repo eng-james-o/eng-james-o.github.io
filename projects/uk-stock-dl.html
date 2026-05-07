@@ -1,24 +1,47 @@
 ---
 layout: default
-title: UK stock market forecasting
+title: UK Stock Market Forecasting
 permalink: /projects/uk-stock-dl.html
+description: "A deep learning project using CNN-LSTM and GRU models to forecast the FTSE-100 index movement with 15 financial indices."
 ---
 
-<section>
-    <h1>UK Stock Market Forecasting</h1>
-    <p>This project focuses on predicting stock prices in the UK market using deep learning techniques.</p>
-    
-    <!-- <img src="/assets/images/uk-stock-dl.jpg" alt="UK Stock Market Forecasting" style="max-width:100%;border-radius:1em;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:1.5em;"> -->
-    
-    <p><strong>Key Features:</strong></p>
-    <ul>
-        <li>Data collection from UK stock exchanges</li>
-        <li>Deep learning models for time series forecasting</li>
-        <li>Performance evaluation and model tuning</li>
-        <li>Visualization of predictions vs actual stock prices</li>
-    </ul>
-    
-    <a href="https://github.com/eng-james-o/UK-stock-DL" target="_blank">
-        <i class="fab fa-github" style="margin-right:0.4em;"></i>View code on GitHub
-    </a>
+<section class="project-section">
+  <h1>UK Stock Market Forecasting</h1>
+
+  <div class="project-hero">
+    {% include image.html src="/assets/images/uk-stock-hero.png" alt="UK Stock Market Trends" caption="Forecasting the FTSE-100 index." %}
+  </div>
+
+  <h2>Problem</h2>
+  <p>
+    The stock market is notoriously volatile and difficult to predict due to the high noise and non-linearity of financial data. Traditional statistical models often fail to capture the complex temporal dependencies required for accurate forecasting.
+  </p>
+
+  <h2>Solution</h2>
+  <p>
+    I implemented a machine learning pipeline that utilizes hybrid deep learning architectures—specifically CNN-LSTM and GRU models. By incorporating 15 different financial indices as features, the model learns to identify patterns across multiple dimensions of market data.
+  </p>
+
+  <h2>Results</h2>
+  <p>
+    The hybrid CNN-LSTM model outperformed individual architectures by effectively extracting spatial features from input data before processing temporal sequences. The project achieved a significant improvement in directional prediction accuracy for the FTSE-100 index.
+  </p>
+
+  <h2>Tech Stack</h2>
+  <ul>
+    <li><strong>Modeling:</strong> Keras, TensorFlow, Scikit-learn.</li>
+    <li><strong>Data:</strong> Pandas, NumPy.</li>
+    <li><strong>Visualization:</strong> Matplotlib.</li>
+  </ul>
+
+  <h2>Impact</h2>
+  <p>
+    This project demonstrates the power of hybrid deep learning in financial engineering, providing a framework for more robust predictive modeling in volatile markets.
+  </p>
+
+  <div class="project-cta">
+    <h3>Interested in FinTech AI?</h3>
+    <p>Let's discuss how deep learning can be applied to your financial data challenges.</p>
+    <a href="/contact.html" class="btn">Connect</a>
+  </div>
 </section>

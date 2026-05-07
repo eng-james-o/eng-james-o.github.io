@@ -1,23 +1,47 @@
 ---
 layout: default
-title: Drone Conceptual Design software
+title: Drone Conceptual Design Software
 permalink: /projects/drone-conceptual-design.html
+description: "A software tool for drone builders to perform conceptual design calculations and evaluate propeller performance."
 ---
 
-<section>
-    <h1>Drone Conceptual Design Software</h1>
-    <p>This project focuses on a simple software to assist in the conceptual design of drones, including performance analysis, propeller performance and design optimization.</p>
-    
-    <!-- <img src="/assets/images/drone-conceptual-design.jpg" alt="Drone Conceptual Design Software" style="max-width:100%;border-radius:1em;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:1.5em;"> -->
-    
-    <p><strong>Key Features:</strong></p>
-    <ul>
-        <li>Performance analysis of drone designs</li>
-        <li>Design optimization algorithms</li>
-        <li>Visualization of design parameters and performance metrics</li>
-    </ul>
-    
-    <a href="https://github.com/eng-james-o/DroneDesign" target="_blank">
-        <i class="fab fa-github" style="margin-right:0.4em;"></i>View code on GitHub
-    </a>
+<section class="project-section">
+  <h1>Drone Conceptual Design Software</h1>
+
+  <div class="project-hero">
+    {% include image.html src="/assets/images/design_workspace.png" alt="Drone Design Workspace" caption="The conceptual design environment." %}
+  </div>
+
+  <h2>Problem</h2>
+  <p>
+    Initial UAV design requires balancing numerous physical parameters, from motor thrust-to-weight ratios to battery endurance. Without specialized software, these calculations are often handled in disconnected spreadsheets, making iterative design difficult.
+  </p>
+
+  <h2>Solution</h2>
+  <p>
+    I built a desktop application that centralizes conceptual design calculations. It allows builders to input aircraft specs and instantly see performance estimates and propeller efficiency data, enabling rapid prototyping and optimization.
+  </p>
+
+  <h2>Results</h2>
+  <p>
+    The software has streamlined the design phase for several UAV projects, ensuring that hardware selections are backed by physical simulations before any components are purchased.
+  </p>
+
+  <h2>Tech Stack</h2>
+  <ul>
+    <li><strong>Language:</strong> Python.</li>
+    <li><strong>GUI:</strong> PySide2.</li>
+    <li><strong>Mathematics:</strong> NumPy, Matplotlib.</li>
+  </ul>
+
+  <h2>Impact</h2>
+  <p>
+    By making aeronautical engineering principles more accessible through software, this project helps drone builders create more reliable and efficient aircraft.
+  </p>
+
+  <div class="project-cta">
+    <h3>Build Better Drones</h3>
+    <p>Want to use this software or need custom engineering tools for your fleet?</p>
+    <a href="/contact.html" class="btn">Learn More</a>
+  </div>
 </section>
