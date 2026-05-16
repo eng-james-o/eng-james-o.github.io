@@ -13,12 +13,14 @@ Google Earth Engine (GEE) is a powerful cloud-based platform for planetary-scale
 
 {% include image.html src="/assets/images/gee-platform.png" alt="Google Earth Engine Platform Overview" caption="Leveraging GEE for global environmental insights." %}
 
-### Why GEE?
+## Why GEE?
+
 - **Speed**: Massive parallel processing on Google's infrastructure.
 - **Data Access**: Petabytes of data at your fingertips.
 - **Collaboration**: Easy to share scripts and results with the community.
 
 ### Getting Started
+
 To begin using GEE, you can sign up for access and start exploring the JavaScript or Python APIs.
 
 {% include image.html src="/assets/images/gee-code-editor.png" alt="Google Earth Engine JavaScript Code Editor" caption="The GEE JavaScript Code Editor in action." %}

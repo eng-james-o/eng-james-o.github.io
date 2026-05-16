@@ -3,6 +3,7 @@ layout: default
 title: SA Deforestation Monitoring
 permalink: /projects/deforestation-monitoring.html
 description: "Leveraging satellite imagery and Google Earth Engine to track deforestation, water bodies, and carbon stock changes in South Africa."
+mermaid: true
 ---
 
 <section class="project-section">
@@ -12,44 +13,126 @@ description: "Leveraging satellite imagery and Google Earth Engine to track defo
     {% include image.html src="/assets/images/deforestation-map-sa.png" alt="Deforestation Map South Africa" caption="Deforestation hotspots in South Africa (2015-2025)." %}
   </div>
 
-  <h2>Problem</h2>
+  <h2>The Challenge</h2>
   <p>
-    Monitoring large-scale environmental changes like deforestation and water depletion is challenging due to the vast areas involved and the need for frequent, high-resolution data. Traditional ground surveys are insufficient for real-time policy and conservation decisions.
+    Monitoring large-scale environmental changes like deforestation and water depletion is challenging due to the vast areas involved and the need for frequent, high-resolution data. Reliable measurement of forest cover change and water body extent is critical for nature-based carbon projects and environmental stewardship. Traditional ground surveys are insufficient for real-time policy and conservation decisions.
   </p>
+</section>
 
-  <h2>Solution</h2>
-  <p>
-    I developed an automated pipeline using Google Earth Engine and satellite data (Sentinel-1, Sentinel-2, Landsat) to monitor deforestation, water body changes, and carbon emissions across South Africa. The system uses machine learning (Random Forest) to predict carbon density and track losses over time.
-  </p>
-
-  <div class="placeholder-grid">
-    {% include image.html src="/assets/images/arcgis-dashboard-placeholder.png" alt="ArcGIS Dashboard Placeholder" caption="Interactive Deforestation Dashboard." %}
-    {% include image.html src="/assets/images/more-maps-placeholder.png" alt="Map Variations Placeholder" caption="Multi-spectral Land Cover Maps." %}
+<section class="project-section">
+  <h2>Datasets</h2>
+  <p>The project utilizes the following datasets, all integrated via Google Earth Engine for efficient processing:</p>
+  <div class="projects-grid">
+    <div class="card">
+      <h3>Optical & SAR</h3>
+      <ul>
+        <li><strong>Sentinel-2:</strong> Multispectral data for land cover analysis.</li>
+        <li><strong>Sentinel-1 SAR:</strong> Radar imagery for cloud-penetrating observations.</li>
+        <li><strong>Landsat 5/8/9:</strong> Long-term dynamics and thermal infrared data.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Environmental Indices</h3>
+      <ul>
+        <li><strong>Hansen GFC:</strong> Baseline forest loss and gain tracking.</li>
+        <li><strong>Dynamic World:</strong> Real-time land use classifications.</li>
+        <li><strong>ESA WorldCover:</strong> Annual global land cover maps.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Ancillary Data</h3>
+      <ul>
+        <li><strong>HydroSHEDS:</strong> Stream networks and watershed boundaries.</li>
+        <li><strong>OpenStreetMap:</strong> Critical infrastructure (dams, rivers).</li>
+        <li><strong>FAO GAUL:</strong> Standardized administrative boundaries.</li>
+      </ul>
+    </div>
   </div>
+</section>
 
-  <h2>Results</h2>
-  <ul>
-    <li><strong>Area analysed: [X] hectares.</strong> (Actual figures to be provided later)</li>
-    <li>Identified critical deforestation hotspots near water infrastructure.</li>
-    <li>Quantified carbon stock losses from 2015 to 2025.</li>
-    <li>Automated report generation for MRV (Monitoring, Reporting, and Verification).</li>
-  </ul>
+<section class="project-section">
+  <h2>The Workflow</h2>
+  <p>The following diagram outlines the overall project workflow, from data ingestion to final visualization:</p>
 
-  <h2>Tech Stack</h2>
-  <ul>
-    <li><strong>Platform:</strong> Google Earth Engine.</li>
-    <li><strong>Analysis:</strong> Python (geemap, scikit-learn), JavaScript.</li>
-    <li><strong>Visualization:</strong> ArcGIS Online, Folium.</li>
-  </ul>
+  {% raw %}<div class="mermaid">
+flowchart TD
+  subgraph Data["Data Sources"]
+    S1["Sentinel-1 SAR (VV/VH)"]
+    S2["Sentinel-2 SR (NDVI/NDWI)"]
+    L5["Landsat 5 (Temperature)"]
+    OSM["OpenStreetMap (Rivers & Dams)"]
+    DW["Dynamic World (Trees prob.)"]
+    HAN["Hansen GFC (baseline & loss)"]
+    GAUL["FAO GAUL (province boundary)"]
+  end
 
-  <h2>Impact</h2>
-  <p>
-    This project provides actionable intelligence for nature-based carbon projects and water resource management, helping South Africa meet its environmental stewardship goals and support carbon credit programs.
-  </p>
+  subgraph EE["Earth Engine Processing"]
+    A["Ingest & Preprocess <br/> (cloud mask, SAR prep, clip)"]
+    B["Annual Composites 2015–2024<br/>(NDVI/NDWI, DW Trees mean)"]
+    C["Change Detection<br/>(NDVI/DW transitions, SAR cues)"]
+    D["Post-process & Vectorize<br/>(min-area filters, cleaning)"]
+    E["Summaries & QA/QC sample points"]
+  end
+
+  subgraph Exports["Exports"]
+    R1["COG/GeoTIFF rasters"]
+    V1["GeoJSON/Shapefile vectors"]
+    T1["CSV time series"]
+    M1["EE Tile Service / titiler"]
+  end
+
+  subgraph Tools["Apps"]
+    QG["QGIS\nvisualize/edit/validate"]
+    AG["ArcGIS Online\nhost layers & dashboard"]
+  end
+
+  Data --> A
+  A --> B --> C --> D --> E
+  E --> R1
+  E --> V1
+  E --> T1
+  B --> M1
+
+  R1 --> QG
+  R1 --> AG
+  V1 --> AG
+  T1 --> AG
+  M1 --> AG
+</div>{% endraw %}
+
+  <h3>Methodology</h3>
+  <ol class="list">
+    <li><strong>Tree Cover Monitoring:</strong> Computing NDVI thresholds and Random Forest classification to detect forest health and loss.</li>
+    <li><strong>Water Dynamics:</strong> Using MNDWI to track surface water changes near critical infrastructure.</li>
+    <li><strong>Carbon Stock Analysis:</strong> Training a Random Forest classifier to predict Above-Ground Biomass Density (AGBD) using multispectral indices and DEM data.</li>
+    <li><strong>Emissions MRV:</strong> Correlating surface temperatures and atmospheric methane data with deforestation patterns.</li>
+  </ol>
+</section>
+
+<section class="project-section">
+  <h2>Results & Visualization</h2>
+  <p>The automated pipeline generates high-resolution maps and datasets for Monitoring, Reporting, and Verification (MRV).</p>
+  
+  <div class="projects-grid">
+    {% include image.html src="/assets/images/water-changes.png" alt="Water Body Changes" caption="Water surface dynamics (MNDWI)." %}
+    {% include image.html src="/assets/images/infrastructure-map.png" alt="Water Infrastructure Map" caption="Mapping dams and river networks." %}
+    {% include image.html src="/assets/images/carbon-stock-map.png" alt="Carbon Stock Map" caption="Estimated Above-Ground Biomass Density." %}
+    {% include image.html src="/assets/images/emissions-map.png" alt="Carbon Emissions Map" caption="Temperature and methane-based emission tracking." %}
+  </div>
 
   <div class="project-cta">
     <h3>Data-Driven Conservation</h3>
     <p>Need a similar monitoring pipeline for your region or project?</p>
     <a href="/contact.html" class="btn">Collaborate on Monitoring</a>
   </div>
+</section>
+
+<section class="project-section">
+  <h2>Technologies Used</h2>
+  <ul>
+    <li><strong>Cloud Platform:</strong> Google Earth Engine (JavaScript & Python APIs)</li>
+    <li><strong>Analysis:</strong> geemap, ee-python-client, scikit-learn (Random Forest)</li>
+    <li><strong>Visualization:</strong> ArcGIS Online, Folium, Matplotlib</li>
+    <li><strong>Data Export:</strong> Cloud Optimized GeoTIFF (COG), GeoJSON, CSV</li>
+  </ul>
 </section>

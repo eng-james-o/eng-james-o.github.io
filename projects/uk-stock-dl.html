@@ -2,46 +2,73 @@
 layout: default
 title: UK Stock Market Forecasting
 permalink: /projects/uk-stock-dl.html
-description: "A deep learning project using CNN-LSTM and GRU models to forecast the FTSE-100 index movement with 15 financial indices."
+description: "Advanced deep learning pipeline using CNN-LSTM, GRU, and GAN models with sentiment analysis to forecast FTSE-100 movements."
 ---
 
 <section class="project-section">
   <h1>UK Stock Market Forecasting</h1>
 
   <div class="project-hero">
-    {% include image.html src="/assets/images/uk-stock-hero.png" alt="UK Stock Market Trends" caption="Forecasting the FTSE-100 index." %}
+    {% include image.html src="/assets/images/uk-stock-hero.png" alt="UK Stock Market Trends" caption="Forecasting the FTSE-100 index using hybrid deep learning." %}
   </div>
 
-  <h2>Problem</h2>
+  <h2>The Problem</h2>
   <p>
-    The stock market is notoriously volatile and difficult to predict due to the high noise and non-linearity of financial data. Traditional statistical models often fail to capture the complex temporal dependencies required for accurate forecasting.
+    The stock market is notoriously volatile and difficult to predict due to the high noise and non-linearity of financial data. Traditional statistical models often fail to capture the complex temporal dependencies and the "regime shifts" caused by external market sentiment.
   </p>
+</section>
 
-  <h2>Solution</h2>
+<section class="project-section">
+  <h2>The Solution: Multi-Model Architecture</h2>
   <p>
-    I implemented a machine learning pipeline that utilizes hybrid deep learning architectures—specifically CNN-LSTM and GRU models. By incorporating 15 different financial indices as features, the model learns to identify patterns across multiple dimensions of market data.
+    I developed a robust machine learning pipeline that integrates technical indicators with alternative data (sentiment analysis) to predict the FTSE-100 index. The system utilizes multiple deep learning architectures to capture different facets of market behavior:
   </p>
-
-  <h2>Results</h2>
-  <p>
-    The hybrid CNN-LSTM model outperformed individual architectures by effectively extracting spatial features from input data before processing temporal sequences. The project achieved a significant improvement in directional prediction accuracy for the FTSE-100 index.
-  </p>
-
-  <h2>Tech Stack</h2>
   <ul>
-    <li><strong>Modeling:</strong> Keras, TensorFlow, Scikit-learn.</li>
-    <li><strong>Data:</strong> Pandas, NumPy.</li>
-    <li><strong>Visualization:</strong> Matplotlib.</li>
+    <li><strong>CNN-LSTM:</strong> Extracts spatial features from market indicators before processing temporal sequences.</li>
+    <li><strong>GRU (Gated Recurrent Units):</strong> Provides efficient temporal modeling with fewer parameters, ideal for capturing mid-term trends.</li>
+    <li><strong>GANs (Generative Adversarial Networks):</strong> Used to model the underlying distribution of stock returns and improve robustness against noise.</li>
+    <li><strong>Sentiment Analysis:</strong> Integration of <code>vaderSentiment</code> to process news headlines from <code>yfinance</code>, providing a quantitative "market mood" feature.</li>
   </ul>
+</section>
 
-  <h2>Impact</h2>
+<section class="project-section">
+  <h2>Technical Stack & Implementation</h2>
+  <div class="projects-grid">
+    <div class="card">
+      <h3>Modeling</h3>
+      <p>Keras, TensorFlow, Scikit-learn</p>
+    </div>
+    <div class="card">
+      <h3>Data Engineering</h3>
+      <p>Pandas, NumPy, yfinance, vaderSentiment</p>
+    </div>
+    <div class="card">
+      <h3>Visualization</h3>
+      <p>Matplotlib, Seaborn</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem; text-align: center;">
+    <a href="https://github.com/eng-james-o/UK-stock-DL" target="_blank" class="btn">
+      <i class="fab fa-github" style="margin-right:0.4em;"></i>View Code on GitHub
+    </a>
+  </div>
+</section>
+
+<section class="project-section">
+  <h2>Next Steps & Future Roadmap</h2>
   <p>
-    This project demonstrates the power of hybrid deep learning in financial engineering, providing a framework for more robust predictive modeling in volatile markets.
+    The project is evolving from a pure forecasting tool into an integrated algorithmic trading framework.
   </p>
+  <ul>
+    <li><strong>Advanced Sentiment Analysis:</strong> Expanding news sources beyond yfinance to include public tweets, financial blogs, and broker-specific research notes.</li>
+    <li><strong>Algorithmic Trading with RL:</strong> Integrating <strong>Deep Reinforcement Learning (DRL)</strong> to automate trade execution based on model predictions and risk management constraints.</li>
+    <li><strong>Backtesting Suite:</strong> Developing a high-fidelity backtesting engine to evaluate model performance under historical market conditions.</li>
+  </ul>
 
   <div class="project-cta">
     <h3>Interested in FinTech AI?</h3>
-    <p>Let's discuss how deep learning can be applied to your financial data challenges.</p>
-    <a href="/contact.html" class="btn">Connect</a>
+    <p>Let's discuss how deep learning and sentiment analysis can be applied to your financial data challenges.</p>
+    <a href="/contact.html" class="btn">Connect & Collaborate</a>
   </div>
 </section>
