@@ -9,3 +9,5 @@ url: "https://eng-james-o.github.io"
 theme: minima
 plugins:
   - jekyll-feed
+
+exclude: ['README.md', '.gitignore', '.vscode/', '.idea/', 'notes.txt', '.docx', '.wbk', 'scratch/', 'backups/']
