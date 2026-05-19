@@ -1,23 +1,61 @@
 ---
 layout: default
-title: Airfm
+title: Airfm - Airfoil Manipulation Software
 permalink: /projects/airfm.html
+description: "A specialized software tool for drone builders to design, analyze, and compare airfoils, streamlining the UAV design workflow."
 ---
 
-<h1>Airfm</h1>
+<section class="project-section">
+  <h1>Airfm: Airfoil Manipulation Software</h1>
 
-<p>A software for drone builders to create, manipulate, analyse and compare airfoils, to simplify the workflow of designing and building drones.</p>
+  <div class="project-hero">
+    {% include image.html src="/assets/images/splash-screen.png" alt="Airfm Software Interface" caption="The Airfm user interface for airfoil analysis." %}
+  </div>
 
-<!-- <img src="/assets/images/airfm.jpg" alt="Airfm Software Screenshot" style="max-width:100%;border-radius:1em;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:1.5em;"> -->
+  <h2>Problem</h2>
+  <p>
+    Aeronautical designers and drone builders often struggle with fragmented tools when selecting and modifying airfoils. Manually tweaking coordinates and running separate simulations is time-consuming and prone to error.
+  </p>
 
-<p><strong>Key Features:</strong></p>
-<ul>
-  <li>Airfoil creation and editing tools</li>
-  <li>Comparative analysis of airfoil performance</li>
-  <li>Visualization and export options</li>
-  <li>Designed for drone and RC aircraft builders</li>
-</ul>
+  <h2>Solution</h2>
+  <p>
+    Airfm provides a unified platform to create, manipulate, and analyze airfoils. With an intuitive UI and integrated mathematical engines, it simplifies the transition from geometric design to aerodynamic analysis.
+  </p>
 
-<a href="https://github.com/eng-james-o/airfm" target="_blank">
-  <i class="fab fa-github" style="margin-right:0.4em;"></i>View code on GitHub
-</a>
+  <div class="placeholder-grid">
+    {% include image.html src="/assets/images/airfm-library.png" alt="Airfm airfoil selection library" caption="Airfoil airfoil library." %}
+    {% include image.html src="/assets/images/airfm-main.png" alt="Airfm main airfoil editing interface" caption="Main airfoil editing interface." %}
+  </div>
+
+  <h2>Results</h2>
+  <ul>
+    <li><strong>Reduces airfoil selection time from hours to minutes.</strong></li>
+    <li>Standardized airfoil data export for CAD and CFD tools.</li>
+    <li>High-fidelity visualization of aerodynamic coefficients.</li>
+  </ul>
+
+  <h2>Tech Stack</h2>
+  <ul>
+    <li><strong>Languages:</strong> Python, QML.</li>
+    <li><strong>Libraries:</strong> NumPy, Matplotlib, PySide2.</li>
+  </ul>
+
+  <h2>Impact</h2>
+  <p>
+    Airfm empowers drone enthusiasts and professional engineers alike to make data-driven decisions during the conceptual design phase, leading to more efficient and higher-performance aircraft.
+  </p>
+
+  <div class="deep-dive-links">
+    <h3>Deep Dive into Airfm</h3>
+    <ul>
+      <li><a href="/2025/06/09/airfm-1.html">Introducing Airfm: Airfoil Manipulation Software</a></li>
+      <li><a href="/2025/10/29/airfm-2.html">Airfm: Deep Dive into Architecture</a></li>
+    </ul>
+  </div>
+
+  <div class="project-cta">
+    <h3>A Learning Experience</h3>
+    <p>Airfm is a hobby project I built to get my hands dirty with Qt, Python, and aerodynamic theory. While not mature enough for production integration, it served as a great learning platform.</p>
+    <a href="/contact.html" class="btn">Get in Touch</a>
+  </div>
+</section>
