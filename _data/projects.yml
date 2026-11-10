@@ -1,3 +1,21 @@
+- name: Spec-AI
+  type: commercial AI / computer vision
+  description: Image-based packaging consistency assessment using computer vision, OCR, and ML inference. Public engineering overview; proprietary source is private.
+  link: /projects/spec-ai.html
+  tools: [Python, PyTorch, FastAPI, Docker, DVC, Celery]
+
+- name: AeroOps
+  type: commercial software / AI-enabled operations
+  description: Aerial operations management platform under development, spanning field execution, operational records, and AI-assisted workflows.
+  link: /projects/aeroops.html
+  tools: [Python, API Architecture, AI/ML, Cross-platform Engineering]
+
+- name: Maxwell AI Counsellor
+  type: commercial conversational AI
+  description: Private conversational AI project; public overview and engineering considerations, pending verified implementation details.
+  link: /projects/maxwell-ai-counsellor.html
+  tools: [Conversational AI, Software Architecture]
+
 - name: 4G-Controlled Surveillance Drone
   type: hardware, software
   description: Building a fixed-wing drone that can be controlled over 4G networks, allowing for remote surveillance and monitoring.
